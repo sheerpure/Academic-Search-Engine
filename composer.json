@@ -1,0 +1,6 @@
+{
+    "require": {
+        "elasticsearch/elasticsearch": "^7.10",
+        "psr/log": "^1.1"
+    }
+}
