@@ -1,6 +1,11 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '\autoload.php';
-$client = Elasticsearch\ClientBuilder::create()->build();
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use Elasticsearch\ClientBuilder;
+
+$client = ClientBuilder::create()
+    ->setHosts(['elasticsearch:9200'])
+    ->build();
 
 
 
@@ -34,7 +39,7 @@ function check_types( $source, $target )
 //將特定文字high light
 function high_light_keyword( $keyword, $source )
 	{
-	return preg_replace('#'. preg_quote($keyword) .'#i', '<span class="high-light">\\0</span>', $source);
+	return preg_replace('#'. preg_quote($keyword) .'#i', '<span class="high-light">//0</span>', $source);
 	}
 
 //確認是否為新搜尋
@@ -267,7 +272,7 @@ if( $searching )
   				}
 			}
 		</script>
-		<script src="\choices.js">
+		<script src="/choices.js">
 			const searchButton = document.getElementById('submit_btn');
 			const searchInput = document.getElementById('search');
 			searchButton.addEventListener('click', () => {

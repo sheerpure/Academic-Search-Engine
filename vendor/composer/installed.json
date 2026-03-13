@@ -317,6 +317,6 @@
             "install-path": "../react/promise"
         }
     ],
-    "dev": true,
+    "dev": false,
     "dev-package-names": []
 }
